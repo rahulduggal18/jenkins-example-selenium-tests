@@ -3,13 +3,14 @@ pipeline {
   stages {
     stage('Verify browsers are installed') {
       steps {
-        sh 'google-chrome --version'
-        sh 'firefox --version'
+        powershell """
+          Test-Path "C:\Program Files\Google\Chrome\Application\chrome.exe" 
+        """
       }
     }
     stage('Run Tests') {
       steps {
-        sh './mvnw clean test'
+        bat 'mvn clean test'
       }
     }
   }
