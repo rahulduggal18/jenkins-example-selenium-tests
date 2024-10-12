@@ -4,7 +4,7 @@ pipeline {
     stage('Verify browsers are installed') {
       steps {
         powershell """
-          Test-Path "C:\Program Files\Google\Chrome\Application\chrome.exe" 
+          Test-Path "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" 
         """
       }
     }
